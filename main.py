@@ -12,6 +12,7 @@ if __name__ == '__main__':
             row, col = smart_agent.generate_optimal_move()
         else:
             row, col = dumb_agent.generate_optimal_move()
+            
         caro.move(row, col)
         result = caro.check_win()
         if result != Result.PENDING:

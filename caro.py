@@ -35,7 +35,7 @@ class Caro:
         return clone
 
     def move(self, row: int, col: int):
-        if self.status != Result.PENDING or self.board[row, col] != Cell.EMPTY:
+        if self.status != Result.PENDING:
             raise ValueError("Invalid move")
 
         self.board[row, col] = self.turn
@@ -48,7 +48,7 @@ class Caro:
 
         self.turn = Cell.X if self.turn == Cell.O else Cell.O
 
-    def unmmove(self, row: int, col: int):
+    def unmove(self, row: int, col: int):
         self.board[row, col] = Cell.EMPTY
         self.remaining_free_cells += 1
         self.status = Result.PENDING
