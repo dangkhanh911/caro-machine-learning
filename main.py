@@ -1,9 +1,10 @@
 from caro import Caro, Cell, Result
 from rlagent import RLAgent
+from human import Human
 
 if __name__ == '__main__':
     caro = Caro(size=9, size_to_win=5)
-    smart_agent = RLAgent(caro, Cell.X)
+    smart_agent = Human(caro, Cell.X)
     dumb_agent = RLAgent(caro, Cell.O)
     while True:
         print(caro)
